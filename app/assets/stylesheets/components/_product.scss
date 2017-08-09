@@ -11,6 +11,7 @@
   background-color: $light-gray;
   margin: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: height 0.3s, margin 0.3s, transform 0.3s 0.3s, opacity 0.2s 0.3s !important;
 }
 
 /* Body design */

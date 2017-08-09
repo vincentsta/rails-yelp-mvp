@@ -15,7 +15,13 @@
   margin-top: 30px;
 }
 
-.hide-product {
-  display: none !important;
-  transition: opacity 3s ease-in-out;
+.product.hide-product {
+  height: 0;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  transform: translate3D(100%,0,0);
+  opacity: 0;
+  /* status change reverse transitions */
+  transition: transform 0.3s, opacity 0.5s, height 0.3s 0.3s, margin 0.3s 0.3s, padding 0.3s 0.3s;
 }
