@@ -1,15 +1,29 @@
+:hover {
+  text-decoration: none !important;
+}
+
 .product {
   display: flex;
   align-items: center;
   padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
+  background-color: $light-gray;
+  margin: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Body design */
 .product-body {
   flex: 1 1 auto;
 }
+
+.img-body {
+  height: 200px;
+  width: 400px;
+  border-radius: 5px;
+}
+
 .product-body h3 {
   font-weight: bold;
   font-size: 23px;
