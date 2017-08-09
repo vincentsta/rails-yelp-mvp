@@ -1,0 +1,30 @@
+<div class="product">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+    <div class='product-count'>95</div>
+  </div>
+  <div class='product-body'>
+    <h3><%= @restaurant.name %></h3>
+    <p><%= @restaurant.address %></p>
+    <p> <%= "#{@restaurant.category} - #{@restaurant.phone_number}" if @show %></p>
+  </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li>
+      <% unless @show %>
+        <%= link_to restaurant_path(@restaurant) do |el| %>
+          <i class='fa fa-eye'></i>
+        <% end %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to edit_restaurant_path(@restaurant) do |el| %>
+        <i class='fa fa-pencil'></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?" } do |el| %>
+          <i class='fa fa-trash'></i>
+      <% end %>
+    </li>
+  </ul>
+</div>
