@@ -4,4 +4,11 @@ class Restaurant < ApplicationRecord
 
   validates :name, :address, presence: true
   validates :category, inclusion: { in: self::CATEGORIES , allow_nil: false }
+
+  def avg_rating
+    current_ratings = self.reviews.map { |rew| rew.rating }
+    total_rating = current_ratings.reduce(:+)
+    return nil if current_ratings.length == 0
+    total_rating.fdiv(current_ratings.length)
+  end
 end

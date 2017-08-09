@@ -18,10 +18,15 @@
   flex: 1 1 auto;
 }
 
+.img-wrap {
+  flex: 0 1 300px;
+}
+
 .img-body {
   height: 200px;
-  width: 400px;
-  border-radius: 5px;
+  background-size: cover;
+  border-radius: 30px;
+  padding: 10px;
 }
 
 .product-body h3 {
@@ -76,7 +81,7 @@
 .product-controls a {
   padding: 0 20px;
   font-size: 17px;
-  color: #E6E6E6;
+  color: $gray;
 }
 .product-controls a:hover {
   color: #D3473C !important

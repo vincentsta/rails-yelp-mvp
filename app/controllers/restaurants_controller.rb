@@ -4,8 +4,12 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
+  def top
+  end
+
   def show
     @show = true
+    @review = Review.new
   end
 
   def new
