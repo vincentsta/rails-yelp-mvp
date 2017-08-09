@@ -8,7 +8,12 @@ class Restaurant < ApplicationRecord
   def avg_rating
     current_ratings = self.reviews.map { |rew| rew.rating }
     total_rating = current_ratings.reduce(:+)
-    return nil if current_ratings.length == 0
+    return -1 if current_ratings.length == 0
     total_rating.fdiv(current_ratings.length)
   end
+
+  def <=>(other)
+    other.avg_rating <=> self.avg_rating
+  end
+
 end

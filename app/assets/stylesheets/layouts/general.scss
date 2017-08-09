@@ -14,3 +14,8 @@
 .review-content {
   margin-top: 30px;
 }
+
+.hide-product {
+  display: none !important;
+  transition: opacity 3s ease-in-out;
+}

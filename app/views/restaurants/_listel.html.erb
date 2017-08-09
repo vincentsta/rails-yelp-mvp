@@ -1,7 +1,7 @@
-<div class="product">
+<div class="product" data-cat= <%= @restaurant.category %> >
   <div class='product-upvote'>
     <div class='product-count'>
-      <%= @restaurant.avg_rating.round(1) if @restaurant.avg_rating %> <i class="fa fa-star star" aria-hidden="true"></i>
+      <%= @restaurant.avg_rating.round(1) if @restaurant.avg_rating >= 0 %> <i class="fa fa-star star" aria-hidden="true"></i>
     </div>
   </div>
   <%= link_to restaurant_path(@restaurant), class: 'product-body' do |el| %>

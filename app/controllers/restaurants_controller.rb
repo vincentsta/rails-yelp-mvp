@@ -1,10 +1,13 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.order(:name)
   end
 
-  def top
+  def top(cat = nil)
+    restaurants = Restaurant.all unless cat
+    restaurants = Restaurant.where(category: cat) if cat
+    @restaurants = restaurants.sort
   end
 
   def show

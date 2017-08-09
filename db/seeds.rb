@@ -6,17 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-(1..2).each do |rest|
+(1..100).each do |rest|
   rest = Restaurant.create(
     name: Faker::Dessert.variety,
     address: Faker::Address.street_address,
-    category: Restaurant::Categories.sample
+    category: Restaurant::CATEGORIES.sample
   )
-  nb_reviews = (0..50).sample
+  nb_reviews = rand(0..50)
   (0..nb_reviews).each do |r|
     Review.create(
       restaurant: rest,
-      rating: (0..5).sample,
+      rating: rand(0..5),
       content: Faker::Lorem.sentence(3, true)
     )
   end
